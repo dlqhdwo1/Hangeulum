@@ -7,7 +7,16 @@
  	<insert id="join" parameterType="user">     <!-- 넘어온 변수들의 파일경로 --> <!-- user : Alias로 지정해준 경로임  -->
  		insert into userinfo(userid,userpassword,username,userbirth,userphone,gender,useremail) values(#{userid},#{userpassword},#{username},#{userbirth},#{userphone},#{gender},#{useremail})
  	</insert>
+ 	
+ 	<select id ="getUser" parameterType="String" resultType="user">
+ 		select * from userinfo where userid=#{id}
+ 	</select>
 
+
+	<select id="login" parameterType="String" resultType="String">
+		select userid from userinfo where userid=#{id} and userpassword=#{pwd}
+
+	</select>
 
  
  </mapper>

@@ -14,7 +14,9 @@
 <P>  The time on the server is ${serverTime}. </P>
 
 <a href="/Hangeulum/user/joinForm">test로</a>
+<a href="/Hangeulum/user/loginForm">로그인폼으로</a>
 
+<h2>${sessionScope.id}</h2>로그인
 
 
 </body>
