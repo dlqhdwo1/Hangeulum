@@ -46,8 +46,15 @@ $.ajax({
 		success:function(data){
 			alert(data);
 			var userid = data;
-			location.href='/Hangeulum/user/findpasswordcompleteForm?userid='+userid;
 			
+			if(userid ===''){
+				alert('고객님과 일치하는 정보가 존재하지 않습니다.');
+				location.href='/Hangeulum/user/findpasswordForm';
+			}
+			
+			else{
+			location.href='/Hangeulum/user/findpasswordcompleteForm?userid='+userid;
+			}
 			
 		
 		

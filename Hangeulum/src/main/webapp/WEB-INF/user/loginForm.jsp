@@ -11,13 +11,23 @@
 	<link rel="stylesheet" href="/Hangeulum/user/css/loginForm.css">
 	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
 </head>
+
+<style type="text/css">
+#loginForm div {
+	color:blue;
+	font-size:14px;
+}
+
+</style>
+
+
 <body>
 	<div class="main-container">
 		<div class="main-wrap">
 		<header>
 			
 			<div class="logo-wrap">
-				<a href="./maintest2.jsp"><img width="1050" height="130" class="logo" 
+				<a href="/Hangeulum/"><img width="1050" height="130" class="logo" 
 				src="/Hangeulum/image/한걸음로고.png"></a>
 			</div>
 		</header>
@@ -29,12 +39,14 @@
 		
 			<div class="login-input-wrap">	
 				<input id="userid" name="userid" placeholder="Username" type="text"></input>
-				<div id="idDiv" name="idDiv"></div>
+				
 			</div>
+			<div id="idDiv" name="idDiv"></div>
 			<div class="login-input-wrap password-wrap">	
 				<input id="userpassword" name="userpassword" placeholder="Password" type="password"></input>
-				<div id="pwdDiv" name="pwdDiv"></div>
+				
 			</div>
+			<div id="pwdDiv" name="pwdDiv"></div>
 			<div class="login-button-wrap">
 				<button type="button" id="loginBtn" name="loginBtn">로그인</button>
 			</div>

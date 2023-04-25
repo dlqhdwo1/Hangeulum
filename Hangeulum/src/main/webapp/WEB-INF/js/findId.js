@@ -44,11 +44,17 @@ $('#nextBtn').click(function(){
 	
 		success:function(data){
 			var userid = data;
+			console.log(userid);
 
-//
-			alert(userid);	
+			if(userid===''){
+				alert('입력하신 정보와 일치하는 아이디가 없습니다.');
+				location.href='/Hangeulum/user/findIdForm';
+			}
+
+			else{
+			
 			location.href='/Hangeulum/user/findIdCompleteForm?userid='+userid;
-
+			}
 			
 		},
 		

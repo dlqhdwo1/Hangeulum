@@ -21,7 +21,7 @@
     
     <div class="member">
         <!-- 1. 로고 -->
-        <img width="350" height="130" class="logo" src="/Hangeulum/image/한걸음로고.png">
+        <a href="/Hangeulum/"><img width="350" height="130" class="logo" src="/Hangeulum/image/한걸음로고.png"></a>
 
 <form id="joinForm" name="joinForm">
      

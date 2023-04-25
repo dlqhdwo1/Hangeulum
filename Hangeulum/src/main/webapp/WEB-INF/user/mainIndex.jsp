@@ -25,7 +25,7 @@
     <div id="header">
         <div class="headerContent">
             <div class="logo"><a href ="#"></a></div>
-            <img src="/Hangeulum/image/한걸음로고.png" alt="로고" width="250" height="60">
+            <a href="/Hangeulum/"><img src="/Hangeulum/image/한걸음로고.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
                     <li><a href="">기부</a></li>
@@ -51,9 +51,7 @@
                		<br>
                		<a href="/Hangeulum/user/logOut">로그아웃</a>
             </div>
-            
-            
-            
+        
         </div>
     </div>
 </div>
@@ -74,17 +72,11 @@
     <div class="carousel-item active">
       <img class="slide1" src="./images/exam10.jpg"  alt="..." >
     </div>
-    
-   
-    
-   
+
     <div class="carousel-item">
       <img class="slide1" src="./images/exam11.jpg" alt="...">
     </div>
-    
-   
-    
-   
+
     <div class="carousel-item">
       <img class="slide1" src="./images/exam12.jpg"  alt="...">
     </div>

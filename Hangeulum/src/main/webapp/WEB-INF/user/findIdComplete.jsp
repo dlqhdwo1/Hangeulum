@@ -289,7 +289,7 @@ table {
 </head>
 <body>
 
-${userid}
+
 <div class="logo">
 
 <div class="logo-left"></div>

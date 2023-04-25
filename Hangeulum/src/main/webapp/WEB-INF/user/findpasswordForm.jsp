@@ -399,9 +399,6 @@ cursor: pointer;
 		<p>비밀번호 찾기 시 문제가 있나요? <a href="#">바로가기</a></p>
 	</div>
 
-
-
-	
 	
 	<div class="box2"></div>
 
