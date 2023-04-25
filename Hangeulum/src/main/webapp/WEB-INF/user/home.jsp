@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+
 <html>
 <head>
 	<title>Home</title>
@@ -13,10 +12,17 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
+
+
+
 <a href="/Hangeulum/user/joinForm">test로</a>
 <a href="/Hangeulum/user/loginForm">로그인폼으로</a>
+<a href="/Hangeulum/user/logOut">로그아웃</a>
+id=${sessionScope.userid}
+email=${sessionScope.kakao_email2}
+image=${kakao_profile}
 
-<h2>${sessionScope.id}</h2>로그인
+<img width="30" height="30" src="${kakao_profile}"/>
 
 
 </body>

@@ -11,10 +11,7 @@ public class MainController {
 	@RequestMapping(value="/" , method =RequestMethod.GET)
 	public String Index() { //사용자 콜백 메소드
 
-		return "views/home"; // /WEB-INF/sum/input.jsp 
+		return "user/mainIndex"; // /WEB-INF/sum/input.jsp 
 	}
-	
-	
 
-	
 }

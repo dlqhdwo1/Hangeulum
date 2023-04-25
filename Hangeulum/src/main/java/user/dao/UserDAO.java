@@ -1,6 +1,9 @@
 package user.dao;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
@@ -11,7 +14,15 @@ public interface UserDAO {
 
 	public UserDTO getUser(String id);
 
-	public String login(Model model,HttpServletRequest request);
+	public String login(Map<String,String> map);
+
+	public String kakaologin(String kakao_email);
+
+	public String findIdComplete(Map<String, String> map);
+
+	public String findpasswordcomplete(Map<String, String> map);
+
+	public void changepassword(Map<String, String> map);
 		
 	
 }

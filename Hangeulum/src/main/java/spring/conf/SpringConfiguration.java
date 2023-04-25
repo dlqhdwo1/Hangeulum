@@ -47,11 +47,13 @@ public class SpringConfiguration {
 		return sqlSessionFactoryBean.getObject(); // sqlSessionFactory를 리턴해주는 메소드
 
 	}
+	
 	@Bean
 	public SqlSessionTemplate sqlSession() throws Exception{
 		SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
 		return sqlSessionTemplate;
 	}
+	
 	
 	@Bean
 	public DataSourceTransactionManager transactionManager(){

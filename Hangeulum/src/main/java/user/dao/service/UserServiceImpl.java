@@ -1,16 +1,24 @@
 package user.dao.service;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
+import java.util.Random;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import user.bean.UserDTO;
 import user.dao.UserDAO;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+
+	
+	@Autowired
+	private HttpSession session;
 	
 	@Autowired
 	private UserDAO userDAO = null;
@@ -19,6 +27,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public void join(UserDTO userDTO) {
+		
 		userDAO.join(userDTO);
 		
 	}
@@ -39,10 +48,48 @@ public class UserServiceImpl implements UserService {
 
 
 	@Override
-	public String login(Model model,HttpServletRequest request) {
-		 return userDAO.login(model,request);
+	public String login(Map<String,String> map) {
+		return userDAO.login(map);
+	
+	}
+
+
+
+	@Override
+	public String kakaologin(String kakao_email) {
 		
+		
+		
+		return userDAO.kakaologin(kakao_email);
+	}
+
+
+
+	@Override
+	public String findIdComplete(Map<String, String> map) {
+		
+		
+		
+		return userDAO.findIdComplete(map);
+	}
+
+
+
+	@Override
+	public String findpasswordcomplete(Map<String, String> map) {
+		
+		return userDAO.findpasswordcomplete(map);
+	}
+
+
+
+	@Override
+	public void changepassword(Map<String, String> map) {
+		userDAO.changepassword(map);
 		
 	}
+
+
+
 
 }

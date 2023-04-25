@@ -18,17 +18,17 @@ $('#loginBtn').click(function(){
 		type:'post',
 		url:'/Hangeulum/user/login',
 		data:$('#loginForm').serialize(),
-		
+	
 		success:function(data){
-			
-			
+			console.log(data);
+
 			if(data=='success'){
 				console.log(data);
 				alert('로그인성공');
 				location.href='/Hangeulum/';
 			}else if(data=='fail'){
-				console.log(data);
-				console.log('로그인실패');
+				alert('회원가입을해주세요.');
+				location.href='/Hangeulum/user/joinForm';
 			}
 
 		},
@@ -41,3 +41,9 @@ $('#loginBtn').click(function(){
 	}
 
 });
+
+
+
+
+
+

@@ -1,5 +1,8 @@
 package user.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,7 +10,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 
 import user.bean.UserDTO;
 
@@ -15,17 +17,15 @@ import user.bean.UserDTO;
 @Transactional
 public class UserDAOMybatis implements UserDAO {
 	@Autowired
-	private SqlSession sqlsession;
-
+	private SqlSession sqlsession;	
 	
-	
+	HttpSession session;
 	
 	@Override
 	public void join(UserDTO userDTO) {
-
+		System.out.println(userDTO.getUserpassword());
 		sqlsession.insert("userSQL.join",userDTO);
 		System.out.println("회원가입성공");
-
 	}
 
 	@Override
@@ -35,25 +35,45 @@ public class UserDAOMybatis implements UserDAO {
 	}
 
 	@Override
-	public String login(Model model,HttpServletRequest request) {
+	public String login(Map<String,String> map) {
 		
-		String id = sqlsession.selectOne("userSQL.login", model);
 		
-		HttpSession session = request.getSession();
+		return sqlsession.selectOne("userSQL.login", map);
 
 		
-		session.setAttribute("id", id);
+
+	}
+
+	@Override
+	public String kakaologin(String kakao_email) {
+	
 		
-		String id2 = (String)session.getAttribute("id");
-		System.out.println(id2);
 
-		if(id!=null) {
+		
+		String userid=sqlsession.selectOne("userSQL.kakaologin",kakao_email);
+		
+		return userid;
 
-			return "success";
-		}
-		else{
-			return "fail";
-		}
+		
+	}
 
+	@Override
+	public String findIdComplete(Map<String, String> map) {
+		String userid = sqlsession.selectOne("userSQL.findIdComplete",map);
+		return userid;
+	}
+
+	@Override
+	public String findpasswordcomplete(Map<String, String> map) {
+		
+		String userid = sqlsession.selectOne("userSQL.findpasswordcomplete",map);
+		
+		return userid;
+	}
+
+	@Override
+	public void changepassword(Map<String, String> map) {
+		sqlsession.update("userSQL.changepassword",map);
+		System.out.println("업데이트완료!!");
 	}
 }

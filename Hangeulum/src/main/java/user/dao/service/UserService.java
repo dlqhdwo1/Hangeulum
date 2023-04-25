@@ -1,9 +1,12 @@
 package user.dao.service;
 
-import javax.servlet.http.HttpServletRequest;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 
 import user.bean.UserDTO;
 
@@ -13,7 +16,17 @@ public interface UserService {
 
 	public String isExistId(String id);
 
-	public String login(Model model,HttpServletRequest request);
+	public String login(Map<String,String> map);
+
+	public String kakaologin(String kakao_emai);
+
+	public String findIdComplete(Map<String, String> map);
+
+	public String findpasswordcomplete(Map<String, String> map);
+
+	public void changepassword(Map<String, String> map);
+
+	
 
 	
 //
