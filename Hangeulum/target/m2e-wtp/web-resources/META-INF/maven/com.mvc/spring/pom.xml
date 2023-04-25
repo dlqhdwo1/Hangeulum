@@ -14,7 +14,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
   <dependencies>
-      <!-- Spring -->
+	 <!-- Spring -->
       <dependency>
          <groupId>org.springframework</groupId>
          <artifactId>spring-context</artifactId>
@@ -272,9 +272,21 @@
        <version>1.18.24</version>
        <scope>provided</scope>
    </dependency>
+   
+   
+   <!-- 이메일인증 -->
+   <dependency>
+          <groupId>javax.mail</groupId>
+          <artifactId>mail</artifactId>
+          <version>1.4.7</version>
+   </dependency>
+   
+   <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
+       <version>5.3.9</version>
+   </dependency>
 
-
-             
    </dependencies>
     <build>
         <plugins>

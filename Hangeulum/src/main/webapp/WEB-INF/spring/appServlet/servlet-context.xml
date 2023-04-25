@@ -21,6 +21,7 @@
     <resources mapping="/image/**" location="/WEB-INF/image/"></resources>
     <resources mapping="/js/**" location="/WEB-INF/js/"></resources>
     <resources mapping="/user/text/**" location="/WEB-INF/text/"></resources>
+    <resources mapping="/user/**/" location="/WEB-INF/user/"></resources>
     <resources mapping="/smartEditor/**" location="/WEB-INF/smartEditor/"></resources>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
