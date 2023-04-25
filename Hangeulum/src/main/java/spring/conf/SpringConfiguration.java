@@ -42,18 +42,17 @@ public class SpringConfiguration {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());		
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
+		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"),
+												 new ClassPathResource("board/dao/fundingMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject(); // sqlSessionFactory를 리턴해주는 메소드
 
 	}
-	
 	@Bean
 	public SqlSessionTemplate sqlSession() throws Exception{
 		SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
 		return sqlSessionTemplate;
 	}
-	
 	
 	@Bean
 	public DataSourceTransactionManager transactionManager(){
